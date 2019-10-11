@@ -254,21 +254,4 @@ function divide (a, b) {
 multiply(num1, num2);
 divide(num1, num2);
 
-// 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
-// [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
-// Expected Output :
-// 60°C is 140 °F
-// 45°F is 7.222222222222222°C
-
-function Celsius_to_Farenheit (ctemp){
-    var ftemp = ((9 * ctemp)/5) + 32;
-    console.log(ctemp, "°C", " is " , ftemp, "°F");
-}
-Celsius_to_Farenheit(60);
-
-function Farenheit_to_Celsius (ftemp){
-    var ctemp = ((ftemp - 32)/9) * 5;
-    console.log(ftemp, "°F", " is " , ctemp, "°C" );
-}
-Farenheit_to_Celsius(45);
 
