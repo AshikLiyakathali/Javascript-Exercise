@@ -130,26 +130,145 @@ for (var i = 1; i < length; i++){
     var string = nstring;
 } 
 
+// or
+
+function animate_string(id) 
+{
+    var element = document.getElementById(id);
+    var textNode = element.childNodes[0]; // assuming no other children
+    var text = textNode.data;
+
+setInterval(function () 
+{
+ text = text[text.length - 1] + text.substring(0, text.length - 1);
+  textNode.data = text;
+}, 100);
+}
 
 // 6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
 
+// to be a leap year the year should be divisible by 4 and by 400 and not divisible by 100. 
+function leapyear(year)
+{
+return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+}
+console.log(leapyear(2016));
+console.log(leapyear(2000));
+console.log(leapyear(1700));
+console.log(leapyear(1800));
+console.log(leapyear(100));
 
 
 // 7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
 
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var d = new Date("01/01/2014");
+//console.log(d);
+
+for (var i = 1; i < 38 ; i++) {
+    var year = d.getFullYear();
+    //console.log(year)
+    var month = d.getMonth();
+    var day = d.getDate();
+    var dayName = days[d.getDay()];
+    //console.log(dayName);
+    (dayName === "Sunday") ? console.log(year, ": True") : console.log(year, ": False") ;
+    var d = new Date(year + 1, month, day);
+    //console.log(d);
+}
+
+// SOLUTION
+
+for (var year = 2014; year <= 2050; year++)
+    {
+    var d = new Date(year, 0, 1);
+    if ( d.getDay() === 0 )
+        console.log("1st January is being a Sunday  "+year);
+}
 
 
-// 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".
+// 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. 
+// If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".
 
+// function to generate random number between 1 to 10.
+function randomRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  var random = randomRange(1, 10);
+  console.log(random);
+  
+  // input guess number
+  
+  var guess = 6;
+  console.log(guess);
+  
+  // using ternary operater to check if guess matches random
+  
+  (guess === random) ? console.log("Good Work") : console.log("Not matched");
 
 
 // 9. Write a JavaScript program to calculate days left until next Christmas.
 
+var d = new Date();
+//console.log(d);
+var year = d.getFullYear();
+//console.log(year)
+var month = d.getMonth();
+//console.log(month)
+var day = d.getDate();
+//console.log(day)   
+
+//special condition if date is on or after christmas of a given year
+
+if(month === 11 && day >= 25)
+{
+    year = year + 1;
+}
+
+var c = new Date(year, 11, 25);
+//console.log(c);
+
+var diffDays = parseInt((c - d) / (1000 * 60 * 60 * 24), 10); 
+console.log(diffDays, "left until Christmas");
+
+//var date1 = new Date("6/11/2010");
+//var date2 = new Date("4/11/2010");
+//var diffDays = parseInt((date2 - date1) / (1000 * 60 * 60 * 24), 10); 
+//console.log(diffDays);
 
 
 // 10. Write a JavaScript program to calculate multiplication and division of two numbers (input from user).
-// Sample form :
-// sample form
 
+var num1 = 10;
+var num2 = 5;
 
+function multiply (a, b) {
+    console.log(a*b);
+}
+
+function divide (a, b) {
+    console.log(a/b);
+}
+
+multiply(num1, num2);
+divide(num1, num2);
+
+// 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
+// [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
+// Expected Output :
+// 60°C is 140 °F
+// 45°F is 7.222222222222222°C
+
+function Celsius_to_Farenheit (ctemp){
+    var ftemp = ((9 * ctemp)/5) + 32;
+    console.log(ctemp, "°C", " is " , ftemp, "°F");
+}
+Celsius_to_Farenheit(60);
+
+function Farenheit_to_Celsius (ftemp){
+    var ctemp = ((ftemp - 32)/9) * 5;
+    console.log(ftemp, "°F", " is " , ctemp, "°C" );
+}
+Farenheit_to_Celsius(45);
 
