@@ -26,7 +26,7 @@ function largest(a,b,c) {
  largest(9,6,3); 
  largest(10,10,30);
  largest(20,40,20);
- largest(60,40,40);
+
 
 
  // 32. Write a JavaScript program to find a value which is nearest to 100 from two different given integer values.
@@ -102,7 +102,6 @@ check("ABABABAB", "A");
 check("ABCABC", "A");
 check("ABC", "A");
 check("BC", "A");
-
 
 
 // 36. Write a JavaScript program to check if the last digit of the three given positive integers is same.
