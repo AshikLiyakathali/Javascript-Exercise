@@ -134,3 +134,69 @@ pt("python");
 //}
 //console.log(equal_pt("ptptss"));
 //console.log(equal_pt("ptps"));
+
+
+// 56. Write a JavaScript program to divide two positive numbers and return a str with properly formatted commas.
+
+function divide(a,b) {
+    var c = a/b;
+    var str = c.toString();
+    nstr = str.split("");
+    nstr = nstr.join();
+    return nstr
+
+}
+console.log(divide(10,5));
+console.log(divide(100,2));
+console.log(divide(4457,2));
+
+
+// 57. Write a JavaScript program to create a new str of specified copies (positive number) of a given str.
+
+function copy(str, num){
+    var nstr = str.repeat(num);
+    console.log(nstr);
+}
+copy("abcd", 2);
+copy("xyz", 4);
+
+
+// 58. Write a JavaScript program to create a new str of 4 copies of the last 3 characters of a given original str.
+// The length of the given str must be 3 and above.
+
+function copy(str){
+    var length = str.length;
+    if(length >= 3){
+        var nstr = str.substr(length -3, length);
+        nstr = nstr.repeat(4);
+        console.log(nstr);
+    }
+}
+copy("abcdef");
+copy("12345");
+
+
+// 59. Write a JavaScript program to extract the first half of a str of even length.
+
+function even(str){
+    var length = str.length;
+    if(length%2 === 0){
+        nstr = str.substr(0,length/2);
+        console.log(nstr);
+    }
+}
+even("1234");
+even("abcdef");
+
+
+// 60. Write a JavaScript program to create a new str without the first and last character of a given str.
+
+function mid(str){
+    var length = str.length;
+    var nstr = str.substr(1,length-2)
+    console.log(nstr)
+}
+mid("abcdef");
+mid("1234");
+
+
