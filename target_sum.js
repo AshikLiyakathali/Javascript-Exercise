@@ -1,4 +1,6 @@
 // Solution 1
+// The simplest way to solve this problem is by using two for loops. 
+// Which will take time complexity of O(n2)
 
 function sumByTwo(array, target_sum){
     var i, j;
@@ -16,6 +18,9 @@ var result = sumByTwo([4,5,-12,-2,8,9], -14);
 console.log(result);
 
 // Solution 2
+// In this solution, first, we will sort the given array. 
+// Then take two variables left=0 and right=array.length-1.
+// Time complexity is O(nLogn+n)=O(nLogn)
 
 function sumByTwo(array, target_sum){
     array.sort(); //which will take O(nlogn)
@@ -41,6 +46,9 @@ console.log(result);
 
 
 // Solution 3
+// It is the most efficient solution.
+// Time complexity of O(n)
+// Space complexity of O(n).
 
 function sumByTwo(array, target_sum){
     var tempArray = []; // it will store elements of given 
