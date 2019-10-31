@@ -124,3 +124,117 @@ function str_con_cat(str1, str2) {
   console.log(str_con_cat("Python", "JS"));
   console.log(str_con_cat("ab", "cdef"));
 
+
+// 65. Write a JavaScript program to test if a str end with "Script". 
+// The str length must be greater or equal to 6.
+
+function script(str){
+    var len = str.length;
+    if(len >= 6){
+        var nstr = str.substring(len-6, len);
+        return (nstr === "Script") ? true : false;
+    }
+    else{
+        return false;
+    }
+}
+console.log(script("JavaScript"));
+console.log(script("Java"));
+console.log(script("ManuScript"));
+console.log(script("Javascript"));
+
+// given solution
+
+function end_script(str) {
+    if (str.substring(str.length - 6, str.length) == 'Script') 
+    {
+      return true;
+    } 
+    else 
+    {
+      return false;
+    }
+  }
+  console.log(end_script("JavaScript"));
+  console.log(end_script("Java Script"));
+  console.log(end_script("Java Scripts"));
+
+
+// 66. Write a JavaScript program to display the city name if the str begins with "Los" or "New" otherwise return blank.
+
+function city(str){
+    var nstr = str.substring(0,3);
+    if(nstr === "Los" || nstr === "New"){
+        return str;
+    }
+    else {
+        return " ";
+    } 
+}
+
+console.log(city("Los Angeles"));
+console.log(city("An"));
+console.log(city("Angeles"));
+console.log(city("New York"));
+console.log(city("new Jersey"));  
+
+
+// 67. Write a JavaScript program to create a new str from a given str, 
+// removing the first and last characters of the str if the first or last character are 'P'. 
+// Return the original str if the condition is not satisfied.
+
+function mid(str){
+    if(str[0] === "P" || str[str.length-1] === "P"){
+        var nstr = str.substring(1,str.length-1)
+        return nstr;
+    }
+    else
+    {
+        return str;
+    }
+}
+
+console.log(mid("Pabcd"));
+console.log(mid("PabcdP"));
+console.log(mid("abcdP"));
+console.log(mid("abcdp"));
+
+
+// 68. Write a JavaScript program to create a new str using the first and last n characters from a given sting. 
+// The str length must be greater or equal to n.
+
+function firstlast(str,n){
+    var length = str.length;
+    if(length >= n){
+        var nstr = str.substring(0,n).concat(str.substring(length-n, length));
+        return nstr; 
+    }
+    else{
+        return str;
+    }
+} 
+console.log(firstlast("abwxyzcd", 2));
+console.log(firstlast("ab", 2));
+console.log(firstlast("abcxyzdef", 3));
+console.log(firstlast("abcd", 5));
+
+
+// 69. Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3
+
+function sum(arr){
+    return arr[0]+arr[1]+arr[2];
+}
+console.log(sum([10,2,3]));
+
+
+// 70. Write a JavaScript program to rotate the elements left of a given array of integers of length 3.
+
+function left(arr){
+    var a = arr.shift();
+    arr.push(a);
+    return arr;
+    // return [arr[1], arr[2], arr[0]] ;
+}
+console.log(left([1,2,3]));
+console.log(left([4,5,6]));
+console.log(left([7,8,9]));
